@@ -1,15 +1,24 @@
 pipeline{
 	agent any
 	stages{
-		stage('get_con'){
+		stage('Checkout'){
 			steps{
-				git branch:'main',
-				url:'https://github.com/Deepakumar155/First_Proj'
+				checkout scm
 			}
 		}
-		stage('Build & test'){
+		stage('Compile'){
 			steps{
-				sh 'mvn clean test'
+				sh 'mvn compile'
+			}
+		}
+		stage('Test'){
+			steps{
+				sh 'mvn test'
+			}
+		}
+		stage('Package'){
+			steps{
+				sh 'mvn package -DskipTests'
 			}
 		}
 	}
