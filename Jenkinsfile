@@ -26,7 +26,7 @@ pipeline{
 				archiveArtifacts artifacts:'target/*.jar',fingerprint: true
 			}
 		}
-		Stage('Deploy'){
+		stage('Deploy'){
 			steps{
 				sh 'cp target/*.jar otp/First-Proj/'
 			}
