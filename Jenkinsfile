@@ -28,7 +28,7 @@ pipeline{
 		}
 		stage('Deploy'){
 			steps{
-				sh 'cp target/*.jar otp/First-Proj'
+				sh 'cp target/*.jar /opt/First-Proj/'
 			}
 		}
 
